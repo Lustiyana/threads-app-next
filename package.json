@@ -14,7 +14,7 @@
     "lint": "next lint",
     "test": "jest --watch",
     "e2e": "npx cypress open",
-    "ci:test": "jest --no-watch && start-server-and-test dev http-get://0.0.0.0:5173 e2e"
+    "ci:test": "jest --no-watch && start-server-and-test dev http-get://0.0.0.0:3000 e2e"
   },
   "dependencies": {
     "@iconify/react": "^5.2.0",
