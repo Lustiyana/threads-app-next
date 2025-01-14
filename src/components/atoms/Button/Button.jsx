@@ -6,7 +6,9 @@ const Button = ({ children, onClick, outline, type, full }) => {
   return (
     <button
       onClick={onClick}
-      className={`btn btn-primary ${outline ? "btn-outline" : ""}`}
+      className={`btn btn-primary ${outline ? "btn-outline" : ""} ${
+        full ? "w-full" : ""
+      }`}
       type={type}
     >
       {children}
