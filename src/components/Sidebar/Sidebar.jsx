@@ -34,7 +34,7 @@ const Sidebar = () => {
           />
         </div>
       </div>
-      {token == "" ? (
+      {token && token == "" ? (
         <div className="flex gap-4">
           <Button
             name="Login"
