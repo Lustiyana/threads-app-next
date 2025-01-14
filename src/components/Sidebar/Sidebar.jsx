@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const Sidebar = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const { token } = useSelector((state) => state.users);
+  const { token } = useSelector((state) => state.login);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -34,7 +34,11 @@ const Sidebar = () => {
           />
         </div>
       </div>
-      {token && token == "" ? (
+      {token ? (
+        <Button name="Logout" onClick={handleLogout}>
+          <div>LOGOUT</div>
+        </Button>
+      ) : (
         <div className="flex gap-4">
           <Button
             name="Login"
@@ -47,10 +51,6 @@ const Sidebar = () => {
             <div>DAFTAR</div>
           </Button>
         </div>
-      ) : (
-        <Button name="Logout" onClick={handleLogout}>
-          <div>LOGOUT</div>
-        </Button>
       )}
     </div>
   );
