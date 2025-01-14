@@ -18,11 +18,12 @@ const HomePage = () => {
   const { data } = useSelector((state) => state.newThread);
   const { users } = useSelector((state) => state.users);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getThreads());
     dispatch(getUsers());
   }, [data]);
-  console.log(threads);
+
   return (
     <MainLayout title="Home">
       {loading ? (
