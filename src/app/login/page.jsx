@@ -65,7 +65,7 @@ const LoginPage = () => {
           onChange={handleChange}
         />
         <Button type="submit" full>
-          {loading ? <Spinner /> : <div>LOGIN</div>}
+          {loading ? <Spinner /> : <div>MASUK</div>}
         </Button>
         <p className="text-center">
           Belum punya akun?{" "}
