@@ -1,5 +1,5 @@
-import * as types from '../../../constants/types'
-import { postThreadService } from "../../../services/threads";
+import * as types from '../../../constants/types';
+import { postThreadService } from '../../../services/threads';
 
 export const postThread = (dataParams) => async (dispatch) => {
   try {

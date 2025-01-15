@@ -1,14 +1,18 @@
 /** @format */
 
-import LoginReducer, { initialState } from "./reducer";
-import * as types from "../../../constants/types";
+import LoginReducer, { initialState } from './reducer';
+import * as types from '../../../constants/types';
 
-describe("LoginReducer", () => {
-  it("should return the initial state when no action is passed", () => {
+// eslint-disable-next-line no-undef
+describe('LoginReducer', () => {
+  // eslint-disable-next-line no-undef
+  it('should return the initial state when no action is passed', () => {
+    // eslint-disable-next-line no-undef
     expect(LoginReducer(undefined, {})).toEqual(initialState);
   });
 
-  it("should handle POST_LOGIN_LOADING", () => {
+  // eslint-disable-next-line no-undef
+  it('should handle POST_LOGIN_LOADING', () => {
     const action = {
       type: types.POST_LOGIN_LOADING,
       payload: true,
@@ -20,11 +24,13 @@ describe("LoginReducer", () => {
       error: null,
     };
 
+    // eslint-disable-next-line no-undef
     expect(LoginReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle POST_LOGIN_SUCCESS", () => {
-    const mockData = { userId: 1, token: "abcd1234" };
+  // eslint-disable-next-line no-undef
+  it('should handle POST_LOGIN_SUCCESS', () => {
+    const mockData = { userId: 1, token: 'abcd1234' };
     const action = {
       type: types.POST_LOGIN_SUCCESS,
       payload: mockData,
@@ -37,11 +43,13 @@ describe("LoginReducer", () => {
       error: null,
     };
 
+    // eslint-disable-next-line no-undef
     expect(LoginReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle POST_LOGIN_FAILED", () => {
-    const mockError = "Invalid credentials";
+  // eslint-disable-next-line no-undef
+  it('should handle POST_LOGIN_FAILED', () => {
+    const mockError = 'Invalid credentials';
     const action = {
       type: types.POST_LOGIN_FAILED,
       payload: mockError,
@@ -53,12 +61,14 @@ describe("LoginReducer", () => {
       error: mockError,
     };
 
+    // eslint-disable-next-line no-undef
     expect(LoginReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle CLEAR_LOGIN", () => {
+  // eslint-disable-next-line no-undef
+  it('should handle CLEAR_LOGIN', () => {
     const stateBeforeClear = {
-      data: { userId: 1, token: "abcd1234" },
+      data: { userId: 1, token: 'abcd1234' },
       loading: false,
       error: null,
     };
@@ -69,14 +79,17 @@ describe("LoginReducer", () => {
 
     const expectedState = initialState;
 
+    // eslint-disable-next-line no-undef
     expect(LoginReducer(stateBeforeClear, action)).toEqual(expectedState);
   });
 
-  it("should return the current state when an unknown action type is dispatched", () => {
+  // eslint-disable-next-line no-undef
+  it('should return the current state when an unknown action type is dispatched', () => {
     const action = {
-      type: "UNKNOWN_ACTION",
+      type: 'UNKNOWN_ACTION',
     };
 
+    // eslint-disable-next-line no-undef
     expect(LoginReducer(initialState, action)).toEqual(initialState);
   });
 });

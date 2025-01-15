@@ -1,20 +1,20 @@
 /** @format */
-"use client";
-
-import TextInput from "../../components/atoms/TextInput/TextInput";
-import AuthLayout from "../../components/layout/AuthLayout/AuthLayout";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { clearLogin, postLogin } from "../../redux/features/login/action";
-import Spinner from "../../components/atoms/Spinner/Spinner";
-import Button from "../../components/atoms/Button/Button";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import TextInput from '../../components/atoms/TextInput/TextInput';
+import AuthLayout from '../../components/layout/AuthLayout/AuthLayout';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { clearLogin, postLogin } from '../../redux/features/login/action';
+import Spinner from '../../components/atoms/Spinner/Spinner';
+import Button from '../../components/atoms/Button/Button';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const LoginPage = () => {
   const [modifiedData, setModifiedData] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const { data, loading } = useSelector((state) => state.login);
@@ -27,9 +27,9 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    if (data?.status === "success") {
-      localStorage.setItem("token", data.data.token);
-      router.replace("/");
+    if (data?.status === 'success') {
+      localStorage.setItem('token', data.data.token);
+      router.replace('/');
     }
   }, [data?.status]);
 
@@ -48,28 +48,28 @@ const LoginPage = () => {
   };
 
   return (
-    <AuthLayout title="Login">
-      <form onSubmit={handleSubmit} className="p-8">
+    <AuthLayout title='Login'>
+      <form onSubmit={handleSubmit} className='p-8'>
         <TextInput
-          type="email"
-          name="email"
-          placeholder="Email"
+          type='email'
+          name='email'
+          placeholder='Email'
           value={modifiedData.email}
           onChange={handleChange}
         />
         <TextInput
-          type="password"
-          name="password"
-          placeholder="Password"
+          type='password'
+          name='password'
+          placeholder='Password'
           value={modifiedData.password}
           onChange={handleChange}
         />
-        <Button type="submit" full>
+        <Button type='submit' full>
           {loading ? <Spinner /> : <div>MASUK</div>}
         </Button>
-        <p className="text-center">
-          Belum punya akun?{" "}
-          <Link href="/register" className="text-primary">
+        <p className='text-center'>
+          Belum punya akun?{' '}
+          <Link href='/register' className='text-primary'>
             Daftar disini
           </Link>
         </p>

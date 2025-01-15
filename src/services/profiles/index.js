@@ -1,12 +1,12 @@
-import { instance } from "../axios";
-import { getAllUsers, getOwnProfile } from "../path";
+import { instance } from '../axios';
+import { getAllUsers, getOwnProfile } from '../path';
 
 export const getProfileService = () => {
   return instance({
     url: getOwnProfile,
-    method: "GET",
+    method: 'GET',
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   })
     .then((res) => res.data)
@@ -18,8 +18,7 @@ export const getProfileService = () => {
 export const getAllProfileService = () => {
   return instance({
     url: getAllUsers,
-    method: "GET",
-    
+    method: 'GET',
   })
     .then((res) => res.data)
     .catch((error) => {

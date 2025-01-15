@@ -1,7 +1,7 @@
 /** @format */
 
-import * as types from "../../../constants/types";
-import { loginService } from "../../../services/auth";
+import * as types from '../../../constants/types';
+import { loginService } from '../../../services/auth';
 
 export const postLogin = (dataParams) => async (dispatch) => {
   try {

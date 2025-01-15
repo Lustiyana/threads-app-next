@@ -1,20 +1,24 @@
 /** @format */
 
-import RegisterReducer from "./reducer";
-import * as types from "../../../constants/types";
+import RegisterReducer from './reducer';
+import * as types from '../../../constants/types';
 
-describe("RegisterReducer", () => {
+// eslint-disable-next-line no-undef
+describe('RegisterReducer', () => {
   const initialState = {
     data: null,
     loading: false,
     error: null,
   };
 
-  it("should return the initial state when no action is passed", () => {
+  // eslint-disable-next-line no-undef
+  it('should return the initial state when no action is passed', () => {
+    // eslint-disable-next-line no-undef
     expect(RegisterReducer(undefined, {})).toEqual(initialState);
   });
 
-  it("should handle POST_REGISTER_LOADING", () => {
+  // eslint-disable-next-line no-undef
+  it('should handle POST_REGISTER_LOADING', () => {
     const action = {
       type: types.POST_REGISTER_LOADING,
       payload: true,
@@ -26,11 +30,13 @@ describe("RegisterReducer", () => {
       error: null,
     };
 
+    // eslint-disable-next-line no-undef
     expect(RegisterReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle POST_REGISTER_SUCCESS", () => {
-    const mockData = { userId: 1, token: "abcd1234" };
+  // eslint-disable-next-line no-undef
+  it('should handle POST_REGISTER_SUCCESS', () => {
+    const mockData = { userId: 1, token: 'abcd1234' };
     const action = {
       type: types.POST_REGISTER_SUCCESS,
       payload: mockData,
@@ -43,11 +49,13 @@ describe("RegisterReducer", () => {
       error: null,
     };
 
+    // eslint-disable-next-line no-undef
     expect(RegisterReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle POST_REGISTER_FAILED", () => {
-    const mockError = "Registration failed";
+  // eslint-disable-next-line no-undef
+  it('should handle POST_REGISTER_FAILED', () => {
+    const mockError = 'Registration failed';
     const action = {
       type: types.POST_REGISTER_FAILED,
       payload: mockError,
@@ -59,12 +67,14 @@ describe("RegisterReducer", () => {
       error: mockError,
     };
 
+    // eslint-disable-next-line no-undef
     expect(RegisterReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle CLEAR_REGISTER", () => {
+  // eslint-disable-next-line no-undef
+  it('should handle CLEAR_REGISTER', () => {
     const stateBeforeClear = {
-      data: { userId: 1, token: "abcd1234" },
+      data: { userId: 1, token: 'abcd1234' },
       loading: false,
       error: null,
     };
@@ -75,14 +85,17 @@ describe("RegisterReducer", () => {
 
     const expectedState = initialState;
 
+    // eslint-disable-next-line no-undef
     expect(RegisterReducer(stateBeforeClear, action)).toEqual(expectedState);
   });
 
-  it("should return the current state when an unknown action type is dispatched", () => {
+  // eslint-disable-next-line no-undef
+  it('should return the current state when an unknown action type is dispatched', () => {
     const action = {
-      type: "UNKNOWN_ACTION",
+      type: 'UNKNOWN_ACTION',
     };
 
+    // eslint-disable-next-line no-undef
     expect(RegisterReducer(initialState, action)).toEqual(initialState);
   });
 });

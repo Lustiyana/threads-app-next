@@ -1,20 +1,24 @@
 /** @format */
 
-import UsersReducer from "./reducer";
-import * as types from "../../../constants/types";
+import UsersReducer from './reducer';
+import * as types from '../../../constants/types';
 
-describe("UsersReducer", () => {
+// eslint-disable-next-line no-undef
+describe('UsersReducer', () => {
   const initialState = {
     users: null,
     loading: false,
     error: null,
   };
 
-  it("should return the initial state when no action is passed", () => {
+  // eslint-disable-next-line no-undef
+  it('should return the initial state when no action is passed', () => {
+    // eslint-disable-next-line no-undef
     expect(UsersReducer(undefined, {})).toEqual(initialState);
   });
 
-  it("should handle GET_ALL_USERS_LOADING", () => {
+  // eslint-disable-next-line no-undef
+  it('should handle GET_ALL_USERS_LOADING', () => {
     const action = {
       type: types.GET_ALL_USERS_LOADING,
       payload: true,
@@ -25,13 +29,15 @@ describe("UsersReducer", () => {
       loading: true,
     };
 
+    // eslint-disable-next-line no-undef
     expect(UsersReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle GET_ALL_USERS_SUCCESS", () => {
+  // eslint-disable-next-line no-undef
+  it('should handle GET_ALL_USERS_SUCCESS', () => {
     const mockUsers = [
-      { id: 1, name: "User One", email: "user1@example.com" },
-      { id: 2, name: "User Two", email: "user2@example.com" },
+      { id: 1, name: 'User One', email: 'user1@example.com' },
+      { id: 2, name: 'User Two', email: 'user2@example.com' },
     ];
     const action = {
       type: types.GET_ALL_USERS_SUCCESS,
@@ -44,11 +50,13 @@ describe("UsersReducer", () => {
       loading: false,
     };
 
+    // eslint-disable-next-line no-undef
     expect(UsersReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle GET_ALL_USERS_FAILED", () => {
-    const mockError = "Failed to fetch users";
+  // eslint-disable-next-line no-undef
+  it('should handle GET_ALL_USERS_FAILED', () => {
+    const mockError = 'Failed to fetch users';
     const action = {
       type: types.GET_ALL_USERS_FAILED,
       payload: mockError,
@@ -60,14 +68,17 @@ describe("UsersReducer", () => {
       loading: false,
     };
 
+    // eslint-disable-next-line no-undef
     expect(UsersReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should return the current state when an unknown action type is dispatched", () => {
+  // eslint-disable-next-line no-undef
+  it('should return the current state when an unknown action type is dispatched', () => {
     const action = {
-      type: "UNKNOWN_ACTION",
+      type: 'UNKNOWN_ACTION',
     };
 
+    // eslint-disable-next-line no-undef
     expect(UsersReducer(initialState, action)).toEqual(initialState);
   });
 });

@@ -4,4 +4,4 @@ export const ICON = {
   chart: 'mdi:graph-box',
   'chart-outline': 'mdi:graph-box-outline',
   add: 'ic:round-plus'
-}
+};

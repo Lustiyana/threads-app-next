@@ -1,7 +1,7 @@
 /** @format */
 
-import * as types from "../../../constants/types";
-import { getAllProfileService } from "../../../services/profiles";
+import * as types from '../../../constants/types';
+import { getAllProfileService } from '../../../services/profiles';
 
 export const getUsers = () => async (dispatch) => {
   try {

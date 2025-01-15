@@ -1,10 +1,10 @@
-import { instance } from "../axios";
-import { postLoginPath, postRegisterPath } from "../path";
+import { instance } from '../axios';
+import { postLoginPath, postRegisterPath } from '../path';
 
 export const registerService = (data) =>
   instance({
     url: postRegisterPath,
-    method: "POST",
+    method: 'POST',
     data,
   })
     .then((res) => res.data)
@@ -16,7 +16,7 @@ export const registerService = (data) =>
 export const loginService = (data) =>
   instance({
     url: postLoginPath,
-    method: "POST",
+    method: 'POST',
     data,
   })
     .then((res) => res.data)

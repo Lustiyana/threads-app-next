@@ -1,5 +1,5 @@
-import * as types from "../../../constants/types";
-import { threadsService } from "../../../services/threads";
+import * as types from '../../../constants/types';
+import { threadsService } from '../../../services/threads';
 
 export const getThreads = () => async (dispatch) => {
   try {

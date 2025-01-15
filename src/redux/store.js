@@ -1,5 +1,5 @@
 /** @format */
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 import {
   FLUSH,
   PAUSE,
@@ -8,8 +8,8 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
-} from "redux-persist";
-import persistedReducer from "./combine-reducer";
+} from 'redux-persist';
+import persistedReducer from './combine-reducer';
 
 export const store = configureStore({
   reducer: persistedReducer,

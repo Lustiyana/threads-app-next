@@ -1,20 +1,24 @@
 /** @format */
 
-import NewThreadReducer from "./reducer";
-import * as types from "../../../constants/types";
+import NewThreadReducer from './reducer';
+import * as types from '../../../constants/types';
 
-describe("NewThreadReducer", () => {
+// eslint-disable-next-line no-undef
+describe('NewThreadReducer', () => {
   const initialState = {
     data: null,
     loading: false,
     error: null,
   };
 
-  it("should return the initial state when no action is passed", () => {
+  // eslint-disable-next-line no-undef
+  it('should return the initial state when no action is passed', () => {
+    // eslint-disable-next-line no-undef
     expect(NewThreadReducer(undefined, {})).toEqual(initialState);
   });
 
-  it("should handle POST_THREADS_LOADING", () => {
+  // eslint-disable-next-line no-undef
+  it('should handle POST_THREADS_LOADING', () => {
     const action = {
       type: types.POST_THREADS_LOADING,
       payload: true,
@@ -25,14 +29,16 @@ describe("NewThreadReducer", () => {
       loading: true,
     };
 
+    // eslint-disable-next-line no-undef
     expect(NewThreadReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle POST_THREADS_SUCCESS", () => {
+  // eslint-disable-next-line no-undef
+  it('should handle POST_THREADS_SUCCESS', () => {
     const mockThreadData = {
       id: 1,
-      title: "New Thread",
-      content: "Thread content",
+      title: 'New Thread',
+      content: 'Thread content',
     };
     const action = {
       type: types.POST_THREADS_SUCCESS,
@@ -45,11 +51,13 @@ describe("NewThreadReducer", () => {
       data: mockThreadData,
     };
 
+    // eslint-disable-next-line no-undef
     expect(NewThreadReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should handle POST_THREADS_FAILED", () => {
-    const mockError = "Error creating thread";
+  // eslint-disable-next-line no-undef
+  it('should handle POST_THREADS_FAILED', () => {
+    const mockError = 'Error creating thread';
     const action = {
       type: types.POST_THREADS_FAILED,
       payload: mockError,
@@ -61,14 +69,17 @@ describe("NewThreadReducer", () => {
       error: mockError,
     };
 
+    // eslint-disable-next-line no-undef
     expect(NewThreadReducer(initialState, action)).toEqual(expectedState);
   });
 
-  it("should return the current state when an unknown action type is dispatched", () => {
+  // eslint-disable-next-line no-undef
+  it('should return the current state when an unknown action type is dispatched', () => {
     const action = {
-      type: "UNKNOWN_ACTION",
+      type: 'UNKNOWN_ACTION',
     };
 
+    // eslint-disable-next-line no-undef
     expect(NewThreadReducer(initialState, action)).toEqual(initialState);
   });
 });
