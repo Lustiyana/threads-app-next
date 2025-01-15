@@ -1,6 +1,6 @@
 /** @format */
-
-import PropType from "prop-types";
+import React from 'react';
+import PropType from 'prop-types';
 
 const TextInput = ({ type, placeholder, value, onChange, name }) => {
   return (
@@ -10,7 +10,7 @@ const TextInput = ({ type, placeholder, value, onChange, name }) => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className="input input-bordered w-full mb-2"
+      className='input input-bordered w-full mb-2'
     />
   );
 };
@@ -22,4 +22,5 @@ TextInput.propTypes = {
   placeholder: PropType.string,
   value: PropType.string,
   onChange: PropType.func,
+  name: PropType.name
 };

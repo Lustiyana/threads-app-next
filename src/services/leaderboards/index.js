@@ -1,10 +1,10 @@
-import { instance } from "../axios";
-import { getAllLeaderboards } from "../path";
+import { instance } from '../axios';
+import { getAllLeaderboards } from '../path';
 
 export const leaderboardsService = () => {
   return instance({
     url: getAllLeaderboards,
-    method: "GET",
+    method: 'GET',
   })
     .then((res) => res.data)
     .catch((error) => {

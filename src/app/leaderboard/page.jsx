@@ -1,12 +1,12 @@
 /** @format */
 
-"use client";
-
-import { useEffect } from "react";
-import MainLayout from "../../components/layout/MainLayout/MainLayout";
-import { useDispatch, useSelector } from "react-redux";
-import { getLeaderboards } from "../../redux/features/leaderboards/action";
-import LoadingBar from "../../components/atoms/LoadingBar/LoadingBar";
+'use client';
+import React from 'react';
+import { useEffect } from 'react';
+import MainLayout from '../../components/layout/MainLayout/MainLayout';
+import { useDispatch, useSelector } from 'react-redux';
+import { getLeaderboards } from '../../redux/features/leaderboards/action';
+import LoadingBar from '../../components/atoms/LoadingBar/LoadingBar';
 
 const Leaderboards = () => {
   const { leaderboards, loading } = useSelector((state) => state.leaderboards);
@@ -17,25 +17,25 @@ const Leaderboards = () => {
   }, []);
 
   return (
-    <MainLayout title="Leaderboard">
+    <MainLayout title='Leaderboard'>
       {loading ? (
         <LoadingBar />
       ) : (
-        <div className="w-full flex flex-col gap-4 mt-8">
+        <div className='w-full flex flex-col gap-4 mt-8'>
           {leaderboards?.map((leaderboard) => (
             <div
               key={leaderboard.user.id}
-              className="flex justify-between items-center"
+              className='flex justify-between items-center'
             >
-              <div className="flex gap-8 items-center">
+              <div className='flex gap-8 items-center'>
                 <img
                   src={leaderboard?.user?.avatar}
-                  alt="avatar"
-                  className="rounded-full w-12 h-12"
+                  alt='avatar'
+                  className='rounded-full w-12 h-12'
                 />
-                <div className="font-bold text-xl">{leaderboard.user.name}</div>
+                <div className='font-bold text-xl'>{leaderboard.user.name}</div>
               </div>
-              <div className="">{leaderboard.score}</div>
+              <div>{leaderboard.score}</div>
             </div>
           ))}
         </div>

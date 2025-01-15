@@ -1,18 +1,19 @@
 /** @format */
 
-/** @format */
-"use client";
-import MainLayout from "../../../components/layout/MainLayout/MainLayout";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getDetailThread } from "../../../redux/features/detail/action";
-import Category from "../../../components/atoms/Category/Category";
-import Votes from "../../../components/Votes/Votes";
-import CommentForm from "../../../components/CommentForm/CommentForm";
-import CommentList from "../../../components/CommentList/CommentList";
-import Owner from "../../../components/Owner/Owner";
-import LoadingBar from "../../../components/atoms/LoadingBar/LoadingBar";
-import { use } from "react";
+'use client';
+import React from 'react';
+import PropType from 'prop-types';
+import MainLayout from '../../../components/layout/MainLayout/MainLayout';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getDetailThread } from '../../../redux/features/detail/action';
+import Category from '../../../components/atoms/Category/Category';
+import Votes from '../../../components/Votes/Votes';
+import CommentForm from '../../../components/CommentForm/CommentForm';
+import CommentList from '../../../components/CommentList/CommentList';
+import Owner from '../../../components/Owner/Owner';
+import LoadingBar from '../../../components/atoms/LoadingBar/LoadingBar';
+import { use } from 'react';
 
 const DetailPage = ({ params }) => {
   const { id } = use(params);
@@ -29,7 +30,7 @@ const DetailPage = ({ params }) => {
       {loading ? (
         <LoadingBar />
       ) : (
-        <div className="flex flex-col gap-12">
+        <div className='flex flex-col gap-12'>
           <section>
             <Category text={thread?.category} />
             <Owner
@@ -38,11 +39,11 @@ const DetailPage = ({ params }) => {
               days={thread?.createdAt}
             />
             <div>
-              <div className="font-bold mb-2">{thread?.title}</div>
+              <div className='font-bold mb-2'>{thread?.title}</div>
               <div dangerouslySetInnerHTML={{ __html: thread?.body }} />
             </div>
           </section>
-          <section className="flex flex-col gap-6">
+          <section className='flex flex-col gap-6'>
             <Votes
               upVotes={thread?.upVotesBy?.length}
               downVotes={thread?.downVotesBy?.length}
@@ -57,3 +58,7 @@ const DetailPage = ({ params }) => {
 };
 
 export default DetailPage;
+
+DetailPage.propTypes = {
+  params: PropType.any,
+};

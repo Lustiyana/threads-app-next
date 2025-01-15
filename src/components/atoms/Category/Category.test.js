@@ -2,31 +2,42 @@
  * @format
  * @jest-environment jsdom
  */
-import "@testing-library/jest-dom";
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import Category from "./Category";
+import '@testing-library/jest-dom';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import Category from './Category';
 
-describe("Category component", () => {
-  test("renders category text correctly", () => {
-    render(<Category text="Technology" />);
+// eslint-disable-next-line no-undef
+describe('Category component', () => {
+  // eslint-disable-next-line no-undef
+  test('renders category text correctly', () => {
+    render(<Category text='Technology' />);
 
     const categoryElement = screen.getByText(/#Technology/i);
 
+    // eslint-disable-next-line no-undef
     expect(categoryElement).toBeInTheDocument();
   });
 
-  test("applies correct class", () => {
-    render(<Category text="Science" />);
+  // eslint-disable-next-line no-undef
+  test('applies correct class', () => {
+    render(<Category text='Science' />);
 
     const categoryElement = screen.getByText(/#Science/i);
 
-    expect(categoryElement).toHaveClass("inline-block");
-    expect(categoryElement).toHaveClass("px-4");
-    expect(categoryElement).toHaveClass("py-1");
-    expect(categoryElement).toHaveClass("mb-4");
-    expect(categoryElement).toHaveClass("text-sm");
-    expect(categoryElement).toHaveClass("border");
-    expect(categoryElement).toHaveClass("rounded-full");
+    // eslint-disable-next-line no-undef
+    expect(categoryElement).toHaveClass('inline-block');
+    // eslint-disable-next-line no-undef
+    expect(categoryElement).toHaveClass('px-4');
+    // eslint-disable-next-line no-undef
+    expect(categoryElement).toHaveClass('py-1');
+    // eslint-disable-next-line no-undef
+    expect(categoryElement).toHaveClass('mb-4');
+    // eslint-disable-next-line no-undef
+    expect(categoryElement).toHaveClass('text-sm');
+    // eslint-disable-next-line no-undef
+    expect(categoryElement).toHaveClass('border');
+    // eslint-disable-next-line no-undef
+    expect(categoryElement).toHaveClass('rounded-full');
   });
 });

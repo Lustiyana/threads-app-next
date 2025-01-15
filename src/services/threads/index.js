@@ -1,10 +1,12 @@
-import { instance } from "../axios";
-import { getAllThreads, postCreateThread } from "../path";
+/** @format */
+
+import { instance } from '../axios';
+import { getAllThreads, postCreateThread } from '../path';
 
 export const threadsService = () => {
   return instance({
     url: getAllThreads,
-    method: "GET",
+    method: 'GET',
   })
     .then((res) => res.data)
     .catch((error) => {
@@ -15,10 +17,10 @@ export const threadsService = () => {
 export const postThreadService = (data) => {
   return instance({
     url: postCreateThread,
-    method: "POST",
+    method: 'POST',
     data,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   })
     .then((res) => res.data)
@@ -30,7 +32,7 @@ export const postThreadService = (data) => {
 export const getDetailService = (id) => {
   return instance({
     url: `${getAllThreads}/${id}`,
-    method: "GET",
+    method: 'GET',
   })
     .then((res) => res.data)
     .catch((error) => {

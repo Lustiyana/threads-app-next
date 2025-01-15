@@ -1,12 +1,13 @@
 /** @format */
+import React from 'react';
 
 const LoadingBar = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className='flex justify-center items-center h-screen'>
       <span
-        className="loading loading-spinner loading-lg bg-primary"
-        role="status"
-        aria-label="Loading"
+        className='loading loading-spinner loading-lg bg-primary'
+        role='status'
+        aria-label='Loading'
       ></span>
     </div>
   );
